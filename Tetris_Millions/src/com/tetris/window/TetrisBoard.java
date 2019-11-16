@@ -1157,7 +1157,12 @@ public class TetrisBoard extends JPanel implements Runnable, KeyListener, MouseL
 				new Music("Rotation.mp3", false).start(); // millions
 			controller.nextRotationLeft(); // 시계
 			controllerGhost.nextRotationLeft();
-		} else if (e.getKeyCode() == button.getSpace_key()) {
+		} else if (e.getKeyCode() == button.getZ_key()) {
+			if (usingEffect)
+				new Music("Rotation.mp3", false).start(); // millions
+			controller.nextRotationRight(); // 반시계
+			controllerGhost.nextRotationRight();
+	    }  else if (e.getKeyCode() == button.getSpace_key()) {
 			controller.moveQuickDown(shap.getPosY(), true);
 			this.fixingTetrisBlock();
 
